@@ -41,6 +41,7 @@
             [routerLink]="[data.routeLink]"
             [ngClass]="getActiveClass(data)"
             (click)="openRoutes()"
+            style="margin-bottom: 1rem;"
           >
             <i class="sidenav-link-icon" [class]="data.icon"></i>
             @if (collapsed()) {

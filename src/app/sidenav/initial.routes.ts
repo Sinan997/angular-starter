@@ -12,11 +12,6 @@ export const initialRoutes: NavRoute[] = [
     label: 'Business Management',
   },
   {
-    routeLink: 'third',
-    icon: 'fa-regular fa-address-book',
-    label: 'Identity',
-  },
-  {
     routeLink: 'fourth',
     icon: 'fa-solid fa-book-open',
     label: 'Category',
@@ -30,5 +25,10 @@ export const initialRoutes: NavRoute[] = [
         label: 'Sub Category',
       },
     ],
+  },
+  {
+    routeLink: 'third',
+    icon: 'fa-regular fa-address-book',
+    label: 'Identity',
   },
 ];
