@@ -4,11 +4,12 @@ import { Router, RouterLink } from '@angular/router';
 import { NavRoute } from '../../model';
 import { NgClass } from '@angular/common';
 import { SublevelMenuComponent } from '../sidenav/sublevel-menu.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-mobile-nav',
   standalone: true,
-  imports: [NgClass, RouterLink, SublevelMenuComponent],
+  imports: [TranslateModule, NgClass, RouterLink, SublevelMenuComponent],
   templateUrl: './mobile-nav.component.html',
   styleUrl: './mobile-nav.component.scss',
 })
@@ -39,5 +40,9 @@ export class MobileNavComponent {
 
   getActiveClass(data: NavRoute): string {
     return this.router.url.includes(data.routeLink) ? 'active' : '';
+  }
+
+  logout() {
+    this.openRoutes();
   }
 }

@@ -1,0 +1,22 @@
+{
+  "form": {
+    "name": "Name",
+    "username": "Username",
+    "password": "Password",
+    "save": "Save",
+    "email": "Email",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "actions": "Actions",
+    "changePassword": "Change password"
+  },
+
+  "login": "Login",
+  "logout": "Logout",
+  "successKey": "Success",
+  "errorKey": "Error",
+  "yes": "Yes",
+  "no": "No",
+  "loading": "Loading..."
+}

@@ -1,10 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { LanguageDropdownComponent } from '../language/language-dropdown.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, LanguageDropdownComponent, TranslateModule],
   templateUrl: './login.component.html',
 })
 export class LoginComponent {
@@ -15,5 +17,9 @@ export class LoginComponent {
     password: ['', { validators: [Validators.required] }],
   });
 
-  onSubmit() {}
+  onSubmit() {
+    if (this.form.invalid) {
+      return;
+    }
+  }
 }

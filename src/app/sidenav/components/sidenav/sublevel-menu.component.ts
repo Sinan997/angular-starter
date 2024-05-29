@@ -4,6 +4,7 @@ import { Router, RouterLinkActive, RouterLink } from '@angular/router';
 import { NgClass } from '@angular/common';
 import { NavRoute } from '../../model';
 import { fadeInOut } from '../../animation';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sublevel-menu',
@@ -33,7 +34,7 @@ import { fadeInOut } from '../../animation';
               >
                 <i class="sublevel-link-icon fa fa-circle"></i>
                 @if (collapsed()) {
-                  <span class="sublevel-link-text" @fadeInOut>{{ item.label }}</span>
+                  <span class="sublevel-link-text" @fadeInOut>{{ item.label | translate }}</span>
                 }
                 @if (item.items && collapsed()) {
                   <i
@@ -53,7 +54,7 @@ import { fadeInOut } from '../../animation';
               >
                 <i class="sublevel-link-icon fa fa-circle"></i>
                 @if (collapsed()) {
-                  <span class="sublevel-link-text" @fadeInOut>{{ item.label }}</span>
+                  <span class="sublevel-link-text" @fadeInOut>{{ item.label | translate }}</span>
                 }
               </a>
             }
@@ -95,7 +96,7 @@ import { fadeInOut } from '../../animation';
     ]),
   ],
   standalone: true,
-  imports: [NgClass, RouterLinkActive, RouterLink],
+  imports: [TranslateModule, NgClass, RouterLinkActive, RouterLink],
 })
 export class SublevelMenuComponent {
   protected readonly router = inject(Router);

@@ -4,31 +4,31 @@ export const initialRoutes: NavRoute[] = [
   {
     routeLink: 'first',
     icon: 'fa-solid fa-house-user',
-    label: 'Dashboard',
+    label: 'localization.Dashboard',
   },
   {
     routeLink: 'second',
     icon: 'fa-regular fa-address-book',
-    label: 'Business Management',
+    label: 'localization.Business',
   },
   {
     routeLink: 'fourth',
     icon: 'fa-solid fa-book-open',
-    label: 'Category',
+    label: 'localization.Cat',
     items: [
       {
         routeLink: 'fourth/asd',
-        label: 'Sub Category',
+        label: 'localization.SubCat',
       },
       {
         routeLink: 'fourth/qwe',
-        label: 'Sub Category',
+        label: 'localization.SubCat',
       },
     ],
   },
   {
     routeLink: 'third',
     icon: 'fa-regular fa-address-book',
-    label: 'Identity',
+    label: 'localization.Identity',
   },
 ];

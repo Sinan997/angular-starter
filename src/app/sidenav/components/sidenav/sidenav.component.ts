@@ -6,11 +6,12 @@ import { fadeInOut } from '../../animation';
 import { SidenavService } from '../../services/sidenav.service';
 import { NavRoute, NavToggle } from '../../model';
 import { SublevelMenuComponent } from './sublevel-menu.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sidenav',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, NgClass, SublevelMenuComponent],
+  imports: [SublevelMenuComponent, TranslateModule, RouterLink, RouterLinkActive, NgClass],
   templateUrl: './sidenav.component.html',
   styleUrl: './sidenav.component.scss',
   animations: [
@@ -68,5 +69,9 @@ export class SidenavComponent {
 
   getActiveClass(data: NavRoute): string {
     return this.router.url.split('/')[1] === data.routeLink ? 'active' : '';
+  }
+
+  logout(){
+    
   }
 }

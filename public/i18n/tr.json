@@ -1,0 +1,22 @@
+{
+  "form": {
+    "name": "İsim",
+    "username": "Kullanıcı adı",
+    "password": "Şifre",
+    "save": "Kaydet",
+    "email": "Email",
+    "cancel": "İptal",
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "actions": "İşlemler",
+    "changePassword": "Şifreyi değiştir"
+  },
+
+  "login": "Giriş yap",
+  "logout": "Çıkış Yap",
+  "successKey": "Başarılı",
+  "errorKey": "Hata",
+  "yes": "Evet",
+  "no": "Hayır",
+  "loading": "Yükleniyor..."
+}

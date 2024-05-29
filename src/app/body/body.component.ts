@@ -1,11 +1,12 @@
 import { Component, input } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { LanguageDropdownComponent } from '../language/language-dropdown.component';
 
 @Component({
   selector: 'app-body',
   standalone: true,
-  imports: [NgClass, RouterOutlet],
+  imports: [NgClass, RouterOutlet, LanguageDropdownComponent],
   templateUrl: './body.component.html',
   styleUrl: './body.component.scss',
 })
