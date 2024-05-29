@@ -27,7 +27,7 @@
     width: 100%;
     margin-left: 0;
     height: calc(100% - 4rem);
-    // height: 100vh;
+    min-height: 100vh;
     padding: 1rem;
     padding-top: 4rem;
   }

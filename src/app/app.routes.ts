@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-
 import { Component } from '@angular/core';
 
 @Component({
@@ -46,4 +45,8 @@ export const routes: Routes = [
   { path: 'fourth/asd', component: FourthOneComponent },
   { path: 'fourth/qwe', component: FourthTwoComponent },
   { path: 'fourth/qwe/asd', component: FourthTwoComponent },
+  {
+    path: 'account/login',
+    loadComponent: () => import('./login/login.component').then((m) => m.LoginComponent),
+  },
 ];
