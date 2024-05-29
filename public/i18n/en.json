@@ -12,6 +12,18 @@
     "changePassword": "Change password"
   },
 
+  "validator": {
+    "email": "Please enter a valid email address.",
+    "max": "Max. value should be {{ max }}. ({{ actual }} entered)",
+    "maxlength": "Max. {{ requiredLength }} characters are allowed. (has {{ actualLength }})",
+    "min": "Min. value should be {{ min }}. ({{ actual }} entered)",
+    "pattern": "Invalid pattern. Please review your input.",
+    "passwordMismatch": "Passwords do not match.",
+    "invalidPassword": "Password should include {{ description }}.",
+    "required": "This field is required.",
+    "minlength": "Min. {{ requiredLength }} characters are required. (has {{ actualLength }})"
+  },
+
   "login": "Login",
   "logout": "Logout",
   "successKey": "Success",

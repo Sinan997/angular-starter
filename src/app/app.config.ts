@@ -4,6 +4,8 @@ import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { BLUEPRINTS, NgxValidateCoreModule } from '@ngx-validate/core';
+import { CustomErrorComponent } from './customerror.component';
 import { routes } from './app.routes';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -17,6 +19,10 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(),
     provideHttpClient(),
     importProvidersFrom(
+      NgxValidateCoreModule.forRoot({
+        errorTemplate: CustomErrorComponent,
+        blueprints: { ...BLUEPRINTS },
+      }),
       TranslateModule.forRoot({
         loader: {
           provide: TranslateLoader,

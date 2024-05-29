@@ -1,10 +1,10 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, inject, input, output } from '@angular/core';
 import { Router, RouterLinkActive, RouterLink } from '@angular/router';
 import { NgClass } from '@angular/common';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { TranslateModule } from '@ngx-translate/core';
 import { NavRoute } from '../../model';
 import { fadeInOut } from '../../animation';
-import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sublevel-menu',

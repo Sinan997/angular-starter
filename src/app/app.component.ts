@@ -1,9 +1,9 @@
 import { Component, signal } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { SidenavComponent } from './sidenav/components/sidenav/sidenav.component';
 import { MobileNavComponent } from './sidenav/components/mobile-nav/mobile-nav.component';
 import { NavToggle } from './sidenav/model';
 import { BodyComponent } from './body/body.component';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',

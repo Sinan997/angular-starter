@@ -2,11 +2,11 @@ import { Component, HostListener, Signal, computed, inject, output, signal } fro
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
 import { NgClass } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 import { fadeInOut } from '../../animation';
 import { SidenavService } from '../../services/sidenav.service';
 import { NavRoute, NavToggle } from '../../model';
 import { SublevelMenuComponent } from './sublevel-menu.component';
-import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sidenav',

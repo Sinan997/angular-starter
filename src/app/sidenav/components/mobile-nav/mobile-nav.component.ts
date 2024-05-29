@@ -1,10 +1,10 @@
 import { Component, Signal, computed, inject, input, signal } from '@angular/core';
-import { SidenavService } from '../../services/sidenav.service';
 import { Router, RouterLink } from '@angular/router';
-import { NavRoute } from '../../model';
 import { NgClass } from '@angular/common';
-import { SublevelMenuComponent } from '../sidenav/sublevel-menu.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { SidenavService } from '../../services/sidenav.service';
+import { NavRoute } from '../../model';
+import { SublevelMenuComponent } from '../sidenav/sublevel-menu.component';
 
 @Component({
   selector: 'app-mobile-nav',
