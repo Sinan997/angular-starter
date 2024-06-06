@@ -3,10 +3,11 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
 import { NgClass } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
-import { fadeInOut } from '../../animation';
 import { SidenavService } from '../../services/sidenav.service';
-import { NavRoute, NavToggle } from '../../model';
+import { AuthService } from '../../../core/services/auth.service';
 import { SublevelMenuComponent } from './sublevel-menu.component';
+import { NavRoute, NavToggle } from '../../model';
+import { fadeInOut } from '../../animation';
 
 @Component({
   selector: 'app-sidenav',
@@ -20,18 +21,16 @@ import { SublevelMenuComponent } from './sublevel-menu.component';
       transition(':enter', [
         animate(
           '1000ms',
-          keyframes([
-            style({ transform: 'rotate(0deg)', offset: '0' }),
-            style({ transform: 'rotate(2turn)', offset: '1' }),
-          ]),
+          keyframes([style({ transform: 'rotate(0deg)', offset: '0' }), style({ transform: 'rotate(2turn)', offset: '1' })]),
         ),
       ]),
     ]),
   ],
 })
 export class SidenavComponent {
-  protected readonly sidenavService = inject(SidenavService);
   protected readonly router = inject(Router);
+  protected readonly sidenavService = inject(SidenavService);
+  protected readonly authService = inject(AuthService);
 
   readonly onToggleSideNav = output<NavToggle>();
 
@@ -71,7 +70,7 @@ export class SidenavComponent {
     return this.router.url.split('/')[1] === data.routeLink ? 'active' : '';
   }
 
-  logout(){
-    
+  logout() {
+    this.authService.logout();
   }
 }

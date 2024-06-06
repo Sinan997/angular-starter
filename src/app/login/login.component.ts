@@ -3,6 +3,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgxValidateCoreModule } from '@ngx-validate/core';
 import { LanguageDropdownComponent } from '../language/language-dropdown.component';
+import { AuthService } from '../core/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,7 @@ import { LanguageDropdownComponent } from '../language/language-dropdown.compone
   templateUrl: './login.component.html',
 })
 export class LoginComponent {
+  protected readonly authService = inject(AuthService);
   protected readonly fb = inject(FormBuilder);
 
   form = this.fb.group({
@@ -22,5 +24,7 @@ export class LoginComponent {
     if (this.form.invalid) {
       return;
     }
+
+    this.authService.login(this.form.controls.username.value!, this.form.controls.password.value!);
   }
 }

@@ -3,8 +3,9 @@ import { Router, RouterLink } from '@angular/router';
 import { NgClass } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { SidenavService } from '../../services/sidenav.service';
-import { NavRoute } from '../../model';
+import { AuthService } from '../../../core/services/auth.service';
 import { SublevelMenuComponent } from '../sidenav/sublevel-menu.component';
+import { NavRoute } from '../../model';
 
 @Component({
   selector: 'app-mobile-nav',
@@ -14,8 +15,9 @@ import { SublevelMenuComponent } from '../sidenav/sublevel-menu.component';
   styleUrl: './mobile-nav.component.scss',
 })
 export class MobileNavComponent {
-  protected readonly sidenavService = inject(SidenavService);
   protected readonly router = inject(Router);
+  protected readonly sidenavService = inject(SidenavService);
+  protected readonly authService = inject(AuthService);
   screenWidth = input.required();
 
   navData: Signal<NavRoute[]>;
@@ -43,6 +45,6 @@ export class MobileNavComponent {
   }
 
   logout() {
-    this.openRoutes();
+    this.authService.logout();
   }
 }

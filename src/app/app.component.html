@@ -1,3 +1,7 @@
-<app-sidenav class="sidenav" (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav>
-<app-mobile-nav class="mobile" [screenWidth]="screenWidth()"></app-mobile-nav>
-<app-body [collapsed]="isSideNavCollapsed()" [screenWidth]="screenWidth()"></app-body>
+@if (authService.user$ | async) {
+  <app-sidenav class="sidenav" (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav>
+  <app-mobile-nav class="mobile" [screenWidth]="screenWidth()"></app-mobile-nav>
+  <app-body [collapsed]="isSideNavCollapsed()" [screenWidth]="screenWidth()"></app-body>
+} @else {
+  <router-outlet></router-outlet>
+}
