@@ -71,6 +71,9 @@ export class SidenavComponent {
   }
 
   logout() {
+    if (this.collapsed()) {
+      this.toggleCollapse();
+    }
     this.authService.logout();
   }
 }
