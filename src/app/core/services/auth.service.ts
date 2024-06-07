@@ -44,17 +44,13 @@ export class AuthService {
       .post(this.baseUrl + '/logout', {
         refreshToken: localStorage.getItem(refreshTokenKey),
       })
-      .pipe(
-        tap(() => {
-          localStorage.removeItem(accessTokenKey);
-          localStorage.removeItem(refreshTokenKey);
-          this.user$.next(undefined);
-        }),
-        finalize(() => {
-          this.router.navigate(['account', 'login']);
-        }),
-      )
       .subscribe();
+
+    localStorage.removeItem(accessTokenKey);
+    localStorage.removeItem(refreshTokenKey);
+    this.user$.next(undefined);
+
+    this.router.navigate(['account', 'login']);
   }
 
   refreshTokenHttp() {
