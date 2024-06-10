@@ -8,7 +8,7 @@ import { BLUEPRINTS, NgxValidateCoreModule } from '@ngx-validate/core';
 import { MessageService } from 'primeng/api';
 import { CustomErrorComponent } from './customerror.component';
 import { routes } from './app.routes';
-import { API_URL } from './tokens/api-url';
+import { API_URL } from './core/tokens/api-url';
 import { LanguageService } from './core/services/language.service';
 import { accessTokenInterceptor, errorHandlerInterceptor } from './core/interceptors';
 

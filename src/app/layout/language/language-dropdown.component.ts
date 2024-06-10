@@ -1,7 +1,7 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, UntypedFormGroup } from '@angular/forms';
 import { UpperCasePipe } from '@angular/common';
-import { LanguageService } from '../core/services/language.service';
+import { LanguageService } from '../../core/services';
 
 @Component({
   selector: 'app-language-dropdown',

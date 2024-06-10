@@ -2,8 +2,8 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgxValidateCoreModule } from '@ngx-validate/core';
-import { LanguageDropdownComponent } from '../language/language-dropdown.component';
 import { AuthService } from '../core/services/auth.service';
+import { LanguageDropdownComponent } from '../layout/language/language-dropdown.component';
 
 @Component({
   selector: 'app-login',

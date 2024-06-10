@@ -4,7 +4,7 @@ import { animate, keyframes, style, transition, trigger } from '@angular/animati
 import { NgClass } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { SidenavService } from '../../services/sidenav.service';
-import { AuthService } from '../../../core/services/auth.service';
+import { AuthService } from '../../../../core/services';
 import { SublevelMenuComponent } from './sublevel-menu.component';
 import { NavRoute, NavToggle } from '../../model';
 import { fadeInOut } from '../../animation';

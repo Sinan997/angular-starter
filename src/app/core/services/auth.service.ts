@@ -3,7 +3,7 @@ import { Injectable, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtDecoderService } from './jwt-decoder.service';
 import { BehaviorSubject, finalize, tap } from 'rxjs';
-import { API_URL } from '../../tokens';
+import { API_URL } from '../tokens';
 import { AuthResponse } from '../models/';
 
 const accessTokenKey = 'accessToken';

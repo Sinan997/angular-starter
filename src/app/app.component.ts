@@ -2,11 +2,11 @@ import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AsyncPipe } from '@angular/common';
 import { ToastModule } from 'primeng/toast';
-import { SidenavComponent } from './sidenav/components/sidenav/sidenav.component';
-import { MobileNavComponent } from './sidenav/components/mobile-nav/mobile-nav.component';
-import { NavToggle } from './sidenav/model';
-import { BodyComponent } from './body/body.component';
+import { SidenavComponent } from './layout/sidenav/components/sidenav/sidenav.component';
+import { MobileNavComponent } from './layout/sidenav/components/mobile-nav/mobile-nav.component';
+import { BodyComponent } from './layout/body/body.component';
 import { AuthService } from './core/services/auth.service';
+import { NavToggle } from './layout/sidenav/model';
 
 @Component({
   selector: 'app-root',
