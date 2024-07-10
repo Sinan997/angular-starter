@@ -14,12 +14,7 @@
     <div class="mt-5">
       @for (data of navData(); track $index) {
         @if (data.items && data.items.length > 0) {
-          <a
-            style="cursor: pointer"
-            class="sidenav-nav-link"
-            (click)="handleClick(data)"
-            [ngClass]="getActiveClass(data)"
-          >
+          <a style="cursor: pointer" class="sidenav-nav-link" (click)="handleClick(data)" [ngClass]="getActiveClass(data)">
             <i class="sidenav-link-icon" [class]="data.icon"></i>
             @if (collapsed()) {
               <span class="sidenav-link-text">
@@ -27,10 +22,7 @@
               </span>
             }
             @if (data.items && collapsed()) {
-              <i
-                class="menu-collapse-icon"
-                [ngClass]="!data.expanded ? 'fa-solid fa-angle-right' : 'fa-solid fa-angle-down'"
-              ></i>
+              <i class="menu-collapse-icon" [ngClass]="!data.expanded ? 'fa-solid fa-angle-right' : 'fa-solid fa-angle-down'"></i>
             }
           </a>
         }
@@ -60,12 +52,21 @@
           ></app-sublevel-menu>
         }
       }
-      <a role="button" class="sidenav-nav-link" (click)="logout()" style="margin-bottom: 1rem">
-        <i class="sidenav-link-icon fa fa-sign-out"></i>
-        @if (collapsed()) {
-          <span class="sidenav-link-text">{{ 'logout' | translate }}</span>
-        }
-      </a>
+      @if (authService.user$ | async) {
+        <a role="button" class="sidenav-nav-link" (click)="logout()" style="margin-bottom: 1rem">
+          <i class="sidenav-link-icon fa fa-sign-out"></i>
+          @if (collapsed()) {
+            <span class="sidenav-link-text">{{ 'logout' | translate }}</span>
+          }
+        </a>
+      } @else {
+        <a role="button" class="sidenav-nav-link" [routerLink]="['/account/login']" style="margin-bottom: 1rem">
+          <i class="sidenav-link-icon fa fa-sign-in"></i>
+          @if (collapsed()) {
+            <span class="sidenav-link-text">{{ 'login' | translate }}</span>
+          }
+        </a>
+      }
     </div>
   </div>
 </div>
