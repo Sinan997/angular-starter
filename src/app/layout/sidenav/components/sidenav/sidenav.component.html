@@ -62,14 +62,25 @@
           }
         </li>
       }
-      <li class="sidenav-nav-item">
-        <a class="sidenav-nav-link" (click)="logout()">
-          <i class="sidenav-link-icon" [class]="'fa fa-sign-out'"></i>
-          @if (collapsed()) {
-            <span class="sidenav-link-text" @fadeInOut>{{ 'logout' | translate }}</span>
-          }
-        </a>
-      </li>
+      @if (authService.user$ | async) {
+        <li class="sidenav-nav-item">
+          <a class="sidenav-nav-link" (click)="logout()">
+            <i class="sidenav-link-icon" [class]="'fa fa-sign-out'"></i>
+            @if (collapsed()) {
+              <span class="sidenav-link-text" @fadeInOut>{{ 'logout' | translate }}</span>
+            }
+          </a>
+        </li>
+      }@else {
+        <li class="sidenav-nav-item">
+          <a class="sidenav-nav-link" [routerLink]="['/account/login']">
+            <i class="sidenav-link-icon" [class]="'fa fa-sign-in'"></i>
+            @if (collapsed()) {
+              <span class="sidenav-link-text" @fadeInOut>{{ 'login' | translate }}</span>
+            }
+          </a>
+        </li>
+      }
     </ul>
   </div>
 </div>

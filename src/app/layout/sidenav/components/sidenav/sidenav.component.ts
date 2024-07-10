@@ -1,7 +1,7 @@
 import { Component, HostListener, Signal, computed, inject, output, signal } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
-import { NgClass } from '@angular/common';
+import { AsyncPipe, NgClass } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { SidenavService } from '../../services/sidenav.service';
 import { AuthService } from '../../../../core/services';
@@ -12,7 +12,7 @@ import { fadeInOut } from '../../animation';
 @Component({
   selector: 'app-sidenav',
   standalone: true,
-  imports: [SublevelMenuComponent, TranslateModule, RouterLink, RouterLinkActive, NgClass],
+  imports: [SublevelMenuComponent, TranslateModule, RouterLink, RouterLinkActive, NgClass, AsyncPipe],
   templateUrl: './sidenav.component.html',
   styleUrl: './sidenav.component.scss',
   animations: [

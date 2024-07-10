@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
-import { loginGuard } from './login/guards/login-guard.guard';
-import { emptyGuard } from './core/guards/empty.guard';
-import { EmptyComponent } from './empty.component';
+import { LayoutComponent } from './layout/layout.component';
+import { loginGuard } from './core/guards/login.guard';
 
 @Component({
   selector: 'app-first',
@@ -41,17 +40,22 @@ export class FourthTwoComponent {}
 export class FourthTwoOneComponent {}
 
 export const routes: Routes = [
-  { path: '', component: EmptyComponent, canActivate: [emptyGuard] },
-  { path: 'first', component: FirstComponent },
-  { path: 'second', component: SecondComponent },
-  { path: 'third', component: ThirdComponent },
-  { path: 'fourth', component: FourthComponent },
-  { path: 'fourth/asd', component: FourthOneComponent },
-  { path: 'fourth/qwe', component: FourthTwoComponent },
-  { path: 'fourth/qwe/asd', component: FourthTwoComponent },
+  {
+    path: '',
+    component: LayoutComponent,
+    children: [
+      { path: 'first', loadComponent: () => import('./lazy/lazy.component').then((m) => m.LazyComponent) },
+      { path: 'second', component: SecondComponent },
+      { path: 'third', component: ThirdComponent },
+      { path: 'fourth', component: FourthComponent },
+      { path: 'fourth/asd', component: FourthOneComponent },
+      { path: 'fourth/qwe', component: FourthTwoComponent },
+      { path: 'fourth/qwe/asd', component: FourthTwoComponent },
+    ],
+  },
   {
     path: 'account/login',
-    loadComponent: () => import('./login/login.component').then((m) => m.LoginComponent),
     canActivate: [loginGuard],
+    loadComponent: () => import('./login/login.component').then((m) => m.LoginComponent),
   },
 ];
