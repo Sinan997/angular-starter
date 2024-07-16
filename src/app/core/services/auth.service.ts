@@ -40,12 +40,6 @@ export class AuthService {
   }
 
   logout() {
-    this.http
-      .post(this.baseUrl + '/logout', {
-        refreshToken: localStorage.getItem(refreshTokenKey),
-      })
-      .subscribe();
-
     localStorage.removeItem(accessTokenKey);
     localStorage.removeItem(refreshTokenKey);
     this.user$.next(undefined);
